@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Mini Brave</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="index.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <div id="interface">
+        <p>
+            試合時間 (秒)
+            <input id="start_time" type="number" inputmode="numeric" value="180" min="0" />
+        </p>
+        <p>
+            初期点数
+            <input id="start_score" type="number" inputmode="numeric" value="10" min="0" />
+        </p>
+    </div>
+    <hr />
+    <div id="point_panel">
+        <div>
+            <!-- <div>
+                    <textarea class="machine-name">マシン名</textarea>
+                </div>
+                -->
+            <div id="red_score" class="panel-text red-bg">0</div>
+            <div class="score-btn">
+                <button onclick="update_score(C_RED,1)">+1</button>
+                <button onclick="update_score(C_RED,-1)">-1</button>
+                <button onclick="update_score(C_RED,-2)">-2</button>
+                <button onclick="update_score(C_RED,-3)">-3</button>
+                <button onclick="update_score(C_RED,-10)">-10</button>
+            </div>
+        </div>
+        <div id="timer" class="">--:--</div>
+        <div>
+            <!--
+                    <div>
+                        <textarea class="machine-name">マシン名</textarea>
+                    </div>
+                -->
+            <div id="green_score" class="panel-text green-bg">0</div>
+            <div class="score-btn">
+                <button onclick="update_score(C_GREEN,1)">+1</button>
+                <button onclick="update_score(C_GREEN,-1)">-1</button>
+                <button onclick="update_score(C_GREEN,-2)">-2</button>
+                <button onclick="update_score(C_GREEN,-3)">-3</button>
+                <button onclick="update_score(C_GREEN,-10)">-10</button>
+            </div>
+        </div>
+        <div>
+            <!--
+                    <div>
+                        <textarea class="machine-name">マシン名</textarea>
+                    </div>
+                -->
+            <div id="yellow_score" class="panel-text yellow-bg">0</div>
+            <div class="score-btn">
+                <button onclick="update_score(C_YELLOW,1)">+1</button>
+                <button onclick="update_score(C_YELLOW,-1)">-1</button>
+                <button onclick="update_score(C_YELLOW,-2)">-2</button>
+                <button onclick="update_score(C_YELLOW,-3)">-3</button>
+                <button onclick="update_score(C_YELLOW,-10)">-10</button>
+            </div>
+        </div>
+        <div class="interface">
+            <button id="init_btn" onclick="initialize_timer()">Reset</button>
+            <button id="start_btn" onclick="start()">Start</button>
+            <button id="stop_btn" onclick="stop()">Stop</button>
+        </div>
+        <div>
+            <!--
+                    <div>
+                        <textarea class="machine-name">マシン名</textarea>
+                    </div>
+                -->
+            <div id="blue_score" class="panel-text blue-bg">0</div>
+            <div class="score-btn">
+                <button onclick="update_score(C_BLUE,1)">+1</button>
+                <button onclick="update_score(C_BLUE,-1)">-1</button>
+                <button onclick="update_score(C_BLUE,-2)">-2</button>
+                <button onclick="update_score(C_BLUE,-3)">-3</button>
+                <button onclick="update_score(C_BLUE,-10)">-10</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="minirobo.js"></script>
+
+    <script>
+        window.onload = Init;
+    </script>
+</body>
+
+</html>
