@@ -11,22 +11,29 @@
 
 <body>
     <div id="interface">
-        <p>
-            試合時間 (秒)
-            <input id="start_time" type="number" inputmode="numeric" value="180" min="0" />
-        </p>
-        <p>
-            初期点数
-            <input id="start_score" type="number" inputmode="numeric" value="10" min="0" />
-        </p>
+        <table>
+            <thead>
+                <caption>試合設定</caption>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>試合時間(秒)</td>
+                    <td><input id="start_time" type="number" inputmode="numeric" value="180" min="0" required /></td>
+                </tr>
+                <tr>
+                    <td>初期点数</td>
+                    <td><input id="start_score" type="number" inputmode="numeric" value="10" min="0" required /></td>
+                </tr>
+                <tr>
+                    <td>マイナス値を許可</td>
+                    <td><input id="allow_minus" type="checkbox" /></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
     <hr />
     <div id="point_panel">
         <div>
-            <!-- <div>
-                    <textarea class="machine-name">マシン名</textarea>
-                </div>
-                -->
             <div id="red_score" class="panel-text red-bg">0</div>
             <div class="score-btn">
                 <button onclick="update_score(C_RED,1)">+1</button>
@@ -38,11 +45,6 @@
         </div>
         <div id="timer" class="">--:--</div>
         <div>
-            <!--
-                    <div>
-                        <textarea class="machine-name">マシン名</textarea>
-                    </div>
-                -->
             <div id="green_score" class="panel-text green-bg">0</div>
             <div class="score-btn">
                 <button onclick="update_score(C_GREEN,1)">+1</button>
@@ -53,11 +55,6 @@
             </div>
         </div>
         <div>
-            <!--
-                    <div>
-                        <textarea class="machine-name">マシン名</textarea>
-                    </div>
-                -->
             <div id="yellow_score" class="panel-text yellow-bg">0</div>
             <div class="score-btn">
                 <button onclick="update_score(C_YELLOW,1)">+1</button>
@@ -73,11 +70,6 @@
             <button id="stop_btn" onclick="stop()">Stop</button>
         </div>
         <div>
-            <!--
-                    <div>
-                        <textarea class="machine-name">マシン名</textarea>
-                    </div>
-                -->
             <div id="blue_score" class="panel-text blue-bg">0</div>
             <div class="score-btn">
                 <button onclick="update_score(C_BLUE,1)">+1</button>
@@ -89,7 +81,7 @@
         </div>
     </div>
 
-    <p class="center">(c) 2024 Gabuniku</p>
+    <p class="center">(c) 2025 Gabuniku</p>
 
     <script src="minirobo.js"></script>
 

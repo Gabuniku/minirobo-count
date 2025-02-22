@@ -22,9 +22,9 @@ var stop_btn = document.getElementById("stop_btn");
 
 function show_time() {
     timer.innerText = get_time_text(remain_time);
-    if(remain_time < 30){
+    if (remain_time < 30) {
         timer.setAttribute("class", "red");
-    }else{
+    } else {
         timer.removeAttribute("class", "red");
     }
 }
@@ -46,7 +46,7 @@ function count_down() {
 
 function initialize_timer() {
     remain_time = Number(start_time.value);
-    let score_els = ["red_score", "blue_score","green_score","yellow_score"];
+    let score_els = ["red_score", "blue_score", "green_score", "yellow_score"];
     for (let index = 0; index < score_els.length; index++) {
         const id = score_els[index];
         let element = document.getElementById(id);
@@ -64,6 +64,7 @@ function start() {
         stop_btn.disabled = false;
     }
 }
+
 function stop() {
     clearInterval(interval_id);
     interval_id = null;
@@ -81,6 +82,7 @@ function Init() {
 
 function update_score(color, update_value) {
     let score_el = document.getElementById(color + "_score");
-    let val = Number(score_el.innerText);
-    score_el.innerText = val + update_value;
+    let allow_minus = document.getElementById("allow_minus").checked;
+    let val = Number(score_el.innerText) + update_value;
+    score_el.innerText = allow_minus ? val : Math.max(val, 0);
 }
